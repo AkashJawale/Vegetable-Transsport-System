@@ -1,0 +1,1 @@
+insert into TRANSPORTBILL values(1,'MH 17 Y 6157','TATA','Thu 04/19/2018','Rushikesh',9876543210,'Onion',60,90,5400,'Sonai',20,7,140);
