@@ -1,0 +1,312 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="null" language="groovy" pageWidth="842" pageHeight="595" orientation="Landscape" columnWidth="802" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="10cced4c-e03f-4d97-bcd9-67e9440a9d70">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<style name="Title" forecolor="#FFFFFF" fontName="Times New Roman" fontSize="50" isBold="false" pdfFontName="Times-Bold"/>
+	<style name="SubTitle" forecolor="#CCCCCC" fontName="Times New Roman" fontSize="18" isBold="false" pdfFontName="Times-Roman"/>
+	<style name="Column header" forecolor="#666666" fontName="Times New Roman" fontSize="14" isBold="true" pdfFontName="Times-Roman"/>
+	<style name="Detail" mode="Transparent" fontName="Times New Roman" pdfFontName="Times-Roman"/>
+	<style name="Row" mode="Transparent" fontName="Times New Roman" pdfFontName="Times-Roman">
+		<conditionalStyle>
+			<conditionExpression><![CDATA[$V{REPORT_COUNT}%2 == 0]]></conditionExpression>
+			<style mode="Opaque" backcolor="#F0EFEF"/>
+		</conditionalStyle>
+	</style>
+	<queryString language="SQL">
+		<![CDATA[SELECT
+     TRANSPORTBILL."V_ID" AS TRANSPORTBILL_V_ID,
+     TRANSPORTBILL."V_TYPE" AS TRANSPORTBILL_V_TYPE,
+     TRANSPORTBILL."T_DATE" AS TRANSPORTBILL_T_DATE,
+     TRANSPORTBILL."R_NAME" AS TRANSPORTBILL_R_NAME,
+     TRANSPORTBILL."R_CONT" AS TRANSPORTBILL_R_CONT,
+     TRANSPORTBILL."V_NAME" AS TRANSPORTBILL_V_NAME,
+     TRANSPORTBILL."V_PRICE" AS TRANSPORTBILL_V_PRICE,
+     TRANSPORTBILL."V_QTY" AS TRANSPORTBILL_V_QTY,
+     TRANSPORTBILL."V_TOTAL" AS TRANSPORTBILL_V_TOTAL,
+     TRANSPORTBILL."T_TO" AS TRANSPORTBILL_T_TO,
+     TRANSPORTBILL."TOD" AS TRANSPORTBILL_TOD,
+     TRANSPORTBILL."P_P_KM" AS TRANSPORTBILL_P_P_KM,
+     TRANSPORTBILL."TOTAL_T_PRICE" AS TRANSPORTBILL_TOTAL_T_PRICE
+FROM
+     "SYSTEM"."TRANSPORTBILL" TRANSPORTBILL]]>
+	</queryString>
+	<field name="TRANSPORTBILL_V_ID" class="java.lang.String"/>
+	<field name="TRANSPORTBILL_V_TYPE" class="java.lang.String"/>
+	<field name="TRANSPORTBILL_T_DATE" class="java.lang.String"/>
+	<field name="TRANSPORTBILL_R_NAME" class="java.lang.String"/>
+	<field name="TRANSPORTBILL_R_CONT" class="java.lang.String"/>
+	<field name="TRANSPORTBILL_V_NAME" class="java.lang.String"/>
+	<field name="TRANSPORTBILL_V_PRICE" class="java.lang.String"/>
+	<field name="TRANSPORTBILL_V_QTY" class="java.lang.String"/>
+	<field name="TRANSPORTBILL_V_TOTAL" class="java.lang.String"/>
+	<field name="TRANSPORTBILL_T_TO" class="java.lang.String"/>
+	<field name="TRANSPORTBILL_TOD" class="java.lang.String"/>
+	<field name="TRANSPORTBILL_P_P_KM" class="java.lang.String"/>
+	<field name="TRANSPORTBILL_TOTAL_T_PRICE" class="java.lang.String"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="102" splitType="Stretch">
+			<frame>
+				<reportElement mode="Opaque" x="0" y="0" width="802" height="66" backcolor="#000000" uuid="e4dc4c05-81f5-47d8-9ee5-9c4012054e06"/>
+				<staticText>
+					<reportElement style="Title" x="0" y="0" width="370" height="66" uuid="fa70b5cc-4e00-4420-ad87-269a9b465ca8"/>
+					<box topPadding="4" leftPadding="4" bottomPadding="4" rightPadding="4"/>
+					<textElement verticalAlignment="Bottom">
+						<font isBold="false"/>
+					</textElement>
+					<text><![CDATA[Transport Report]]></text>
+				</staticText>
+			</frame>
+			<frame>
+				<reportElement mode="Opaque" x="0" y="66" width="802" height="32" forecolor="#000000" backcolor="#CC0000" uuid="bf6f24e9-c85c-4318-8be3-5556c70346a2"/>
+				<textField pattern="EEEEE dd MMMMM yyyy">
+					<reportElement x="553" y="12" width="144" height="20" forecolor="#FFFFFF" uuid="55d1d7b8-701d-4269-89a2-867e961c2d89"/>
+					<textElement textAlignment="Right">
+						<font size="12"/>
+					</textElement>
+					<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+				</textField>
+			</frame>
+		</band>
+	</title>
+	<pageHeader>
+		<band splitType="Stretch"/>
+	</pageHeader>
+	<columnHeader>
+		<band height="18" splitType="Stretch">
+			<staticText>
+				<reportElement style="Column header" x="0" y="0" width="61" height="18" forecolor="#000000" uuid="83bc795a-581e-41a9-a48a-28e018fa428a"/>
+				<textElement>
+					<font isBold="false"/>
+				</textElement>
+				<text><![CDATA[V_ID]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Column header" x="61" y="0" width="61" height="18" forecolor="#000000" uuid="2424f204-766a-4737-b365-a069635667fe"/>
+				<textElement>
+					<font isBold="false"/>
+				</textElement>
+				<text><![CDATA[V_TYPE]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Column header" x="122" y="0" width="61" height="18" forecolor="#000000" uuid="48200c3e-6ee6-4888-b7d1-4238920eb534"/>
+				<textElement>
+					<font isBold="false"/>
+				</textElement>
+				<text><![CDATA[T_DATE]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Column header" x="183" y="0" width="61" height="18" forecolor="#000000" uuid="bd1e08c2-3aae-4d0a-a7d0-4b4c3e961d32"/>
+				<textElement>
+					<font isBold="false"/>
+				</textElement>
+				<text><![CDATA[R_NAME]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Column header" x="244" y="0" width="61" height="18" forecolor="#000000" uuid="d62816d3-15a1-43de-883c-0ebd01652cd6"/>
+				<textElement>
+					<font isBold="false"/>
+				</textElement>
+				<text><![CDATA[R_CONT]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Column header" x="305" y="0" width="61" height="18" forecolor="#000000" uuid="3913e69c-192d-4d85-92ac-c40887d38020"/>
+				<textElement>
+					<font isBold="false"/>
+				</textElement>
+				<text><![CDATA[V_NAME]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Column header" x="366" y="0" width="61" height="18" forecolor="#000000" uuid="04f92d76-8c92-409a-90f7-80f4a40f1f5f"/>
+				<textElement>
+					<font isBold="false"/>
+				</textElement>
+				<text><![CDATA[V_PRICE]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Column header" x="427" y="0" width="61" height="18" forecolor="#000000" uuid="fe8741f4-7ead-4bd5-a69c-f4aee990cea4"/>
+				<textElement>
+					<font isBold="false"/>
+				</textElement>
+				<text><![CDATA[V_QTY]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Column header" x="488" y="0" width="61" height="18" forecolor="#000000" uuid="7347aa17-4ab7-4423-9e06-2078693a084e"/>
+				<textElement>
+					<font isBold="false"/>
+				</textElement>
+				<text><![CDATA[V_TOTAL]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Column header" x="549" y="0" width="61" height="18" forecolor="#000000" uuid="332783f5-ba38-4df2-88a6-e72b6c8bf01b"/>
+				<textElement>
+					<font isBold="false"/>
+				</textElement>
+				<text><![CDATA[T_TO]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Column header" x="610" y="0" width="61" height="18" forecolor="#000000" uuid="afebf1a7-00fa-49d1-93b8-6b5025b81573"/>
+				<textElement>
+					<font isBold="false"/>
+				</textElement>
+				<text><![CDATA[TOD]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Column header" x="671" y="0" width="61" height="18" forecolor="#000000" uuid="a6d6f933-03c0-4e4a-80ee-4b8c708b645a"/>
+				<textElement>
+					<font isBold="false"/>
+				</textElement>
+				<text><![CDATA[P_P_KM]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Column header" x="732" y="0" width="61" height="18" forecolor="#000000" uuid="04120666-d951-4f02-ae2e-503b112044ff"/>
+				<textElement>
+					<font isBold="false"/>
+				</textElement>
+				<text><![CDATA[TOTAL_T_PRICE]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="18" splitType="Stretch">
+			<frame>
+				<reportElement style="Row" mode="Opaque" x="0" y="0" width="797" height="18" uuid="4540e4fd-9bcd-429d-8ff3-fa71ba3fcc82"/>
+				<textField isStretchWithOverflow="true">
+					<reportElement style="Detail" positionType="Float" x="0" y="0" width="61" height="18" uuid="c015e681-f63c-4c04-84e5-9ff739fca249"/>
+					<textElement>
+						<font size="14"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{TRANSPORTBILL_V_ID}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true">
+					<reportElement style="Detail" positionType="Float" x="61" y="0" width="61" height="18" uuid="665898a0-519b-4256-8007-57e73aaa6ca0"/>
+					<textElement>
+						<font size="14"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{TRANSPORTBILL_V_TYPE}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true">
+					<reportElement style="Detail" positionType="Float" x="122" y="0" width="61" height="18" uuid="df9676a5-c972-4a95-bccd-4b17e6cfd57e"/>
+					<textElement>
+						<font size="14"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{TRANSPORTBILL_T_DATE}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true">
+					<reportElement style="Detail" positionType="Float" x="183" y="0" width="61" height="18" uuid="95d868a5-a078-4443-82c2-acef1783fd64"/>
+					<textElement>
+						<font size="14"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{TRANSPORTBILL_R_NAME}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true">
+					<reportElement style="Detail" positionType="Float" x="244" y="0" width="61" height="18" uuid="3faecac5-ebdb-4eb6-8eea-8c2b509692ce"/>
+					<textElement>
+						<font size="14"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{TRANSPORTBILL_R_CONT}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true">
+					<reportElement style="Detail" positionType="Float" x="305" y="0" width="61" height="18" uuid="105c2a94-d60f-45fe-8c36-12f90476d299"/>
+					<textElement>
+						<font size="14"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{TRANSPORTBILL_V_NAME}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true">
+					<reportElement style="Detail" positionType="Float" x="366" y="0" width="61" height="18" uuid="b3df19d4-664d-4190-a9a3-9a3226bb1526"/>
+					<textElement>
+						<font size="14"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{TRANSPORTBILL_V_PRICE}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true">
+					<reportElement style="Detail" positionType="Float" x="427" y="0" width="61" height="18" uuid="2ba10180-80cd-4c20-861c-aeb3cafe9cc6"/>
+					<textElement>
+						<font size="14"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{TRANSPORTBILL_V_QTY}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true">
+					<reportElement style="Detail" positionType="Float" x="488" y="0" width="61" height="18" uuid="b6a0d2f7-2f8f-4954-a67a-bed1fe46484f"/>
+					<textElement>
+						<font size="14"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{TRANSPORTBILL_V_TOTAL}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true">
+					<reportElement style="Detail" positionType="Float" x="549" y="0" width="61" height="18" uuid="1adc75f9-93e0-4293-9883-70f092781b7b"/>
+					<textElement>
+						<font size="14"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{TRANSPORTBILL_T_TO}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true">
+					<reportElement style="Detail" positionType="Float" x="610" y="0" width="61" height="18" uuid="d2d5f241-3c5e-497d-b07a-2de8bd2b7215"/>
+					<textElement>
+						<font size="14"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{TRANSPORTBILL_TOD}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true">
+					<reportElement style="Detail" positionType="Float" x="671" y="0" width="61" height="18" uuid="44d90fc8-182a-419e-8afa-77e3b59c1d1d"/>
+					<textElement>
+						<font size="14"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{TRANSPORTBILL_P_P_KM}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true">
+					<reportElement style="Detail" positionType="Float" x="732" y="0" width="61" height="18" uuid="169080b6-cea8-4e00-afac-4f57f2cb6cb6"/>
+					<textElement>
+						<font size="14"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{TRANSPORTBILL_TOTAL_T_PRICE}]]></textFieldExpression>
+				</textField>
+			</frame>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="7" splitType="Stretch">
+			<line>
+				<reportElement positionType="FixRelativeToBottom" x="0" y="3" width="555" height="1" uuid="56f512e5-f955-4642-bbe0-4ebfc7221525"/>
+				<graphicElement>
+					<pen lineWidth="0.5" lineColor="#999999"/>
+				</graphicElement>
+			</line>
+		</band>
+	</columnFooter>
+	<pageFooter>
+		<band height="25" splitType="Stretch">
+			<frame>
+				<reportElement mode="Opaque" x="0" y="0" width="802" height="25" forecolor="#D0B48E" backcolor="#000000" uuid="a0f7e1cc-e4a1-4945-af7c-38e9d73a84d6"/>
+				<textField evaluationTime="Report">
+					<reportElement style="Column header" x="757" y="3" width="40" height="20" forecolor="#FFFFFF" uuid="5e3ceed1-647f-4bbc-8a68-bd37504ac24f"/>
+					<textElement verticalAlignment="Middle">
+						<font size="10" isBold="false"/>
+					</textElement>
+					<textFieldExpression><![CDATA[" " + $V{PAGE_NUMBER}]]></textFieldExpression>
+				</textField>
+				<textField>
+					<reportElement style="Column header" x="677" y="3" width="80" height="20" forecolor="#FFFFFF" uuid="10ee1e3a-89d4-4331-b6e8-fc724700a2e2"/>
+					<textElement textAlignment="Right" verticalAlignment="Middle">
+						<font size="10" isBold="false"/>
+					</textElement>
+					<textFieldExpression><![CDATA["Page "+$V{PAGE_NUMBER}+" of"]]></textFieldExpression>
+				</textField>
+				<textField pattern="EEEEE dd MMMMM yyyy">
+					<reportElement style="Column header" x="2" y="3" width="197" height="20" forecolor="#FFFFFF" uuid="64518e9e-e72c-4bbd-b405-9a297bf352c4"/>
+					<textElement verticalAlignment="Middle">
+						<font size="10" isBold="false"/>
+					</textElement>
+					<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+				</textField>
+			</frame>
+		</band>
+	</pageFooter>
+	<summary>
+		<band splitType="Stretch"/>
+	</summary>
+</jasperReport>
